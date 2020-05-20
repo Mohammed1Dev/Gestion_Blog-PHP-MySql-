@@ -29,9 +29,10 @@
         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
         <div class="divider-custom-line"></div>
     </div>
-
+  <a href="AddPost.php" class="btn btn-outline-secondary float-md-right">Post SomeThing !!!</a>
 </div>
 <div class="d-flex flex-wrap align-items-center">
+
   <?php
   $query = "SELECT * from posts";
   $result = $conn->query($query);
@@ -44,8 +45,6 @@
       $date = $data[$i]["date"];
 
 
-
-
   ?>
 
   <div class="card shadow-lg p-3 mb-5 bg-white rounded ml-5"  style="width: 18rem;">
@@ -54,7 +53,8 @@
       <h5 class="card-title"><?php echo $id_post."From User N°:".$id_user;?></h5>
       <h7 class="card-title"><?php echo $date;?></h7>
       <p class="card-text"><?php echo $content?></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="Editer.php?id=<?php echo $id_post ?>" class="btn btn-primary">Modifier</a>
+      <a href="Delete.php?id=<?php echo $id_post ?>" class="btn btn-primary">Delete</a>
     </div>
   </div>
   <?php   } ?>

@@ -20,7 +20,9 @@
 
                $_SESSION["user"] = $user;
                $_SESSION["Admin"] = $data[$i]["admin"];
+               $_SESSION["idUser"] = $data[$i]["id_user"];
                header('location:Home.php');
+               exit();
               }
               else{
 
